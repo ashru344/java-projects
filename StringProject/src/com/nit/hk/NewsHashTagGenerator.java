@@ -18,34 +18,33 @@ Notes:
 */
 package com.nit.hk;
 
-public class StringP1 {
+public class NewsHashTagGenerator
+{
 
-	public static void getHashTags(String heading) {
-		String[] headingArr = heading.split(" ");
-		
-		System.out.print("[");
-			for (int j = 0; j < 3; j++) {
-			String string = headingArr[0];
-			int count=1;
-			for (int i = 1; i < headingArr.length; i++) {
-				if (string.length() < headingArr[i].length()) {
-					string = headingArr[i];
-					count=i;
-				}
-			}
-			headingArr[count]="a";
-			String str =string.replaceAll("[,!?.|]", "");			
-			System.out.print(" \"#"+str+"\",");
-			
-		}
-		System.out.println("]");
-	}
+    public static void getHashTags( String heading )
+    {
+        String[] headingArr = heading.split( " " );
 
-	public static void main(String[] args) {
-	//	getHashTags("How the Avocado Became the Fruit of the Global Trade");
-	//	getHashTags("Why You Will Probably Pay More for Your Christmas Tree This Year");
-	//	getHashTags("Hey Parents, Surprise, Fruit Juice Is Not Fruit");
-	//	getHashTags("Visualizing Science");
-		
-	}
+        System.out.print( "[" );
+        for( int j = 0; j < 3; j++ )
+        {
+            String string = headingArr[0];
+            int count = 1;
+            for( int i = 1; i < headingArr.length; i++ )
+            {
+                if( string.length() < headingArr[i].length() )
+                {
+                    string = headingArr[i];
+                    count = i;
+                }
+            }
+            headingArr[count] = "a";
+            String str = string.replaceAll( "[,!?.|]", "" );
+            System.out.print( " \"#" + str + "\"," );
+
+        }
+        System.out.println( "]" );
+    }
+
+    //please go to the test file and find the bugs 
 }
